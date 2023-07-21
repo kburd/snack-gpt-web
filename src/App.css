@@ -1,5 +1,12 @@
 .App {
-  margin: 5%;
+  height: 100%;
+}
+
+.app-content {
+  height: 85%;
+  padding: 5%;
+  overflow-y: scroll;
+  background-color: whitesmoke;
 }
 
 h1, h2{
@@ -8,9 +15,9 @@ h1, h2{
 
 form {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 4fr 1fr;
   grid-gap: 10px;
-  margin: 5% 0%;
+  margin: 0 auto;
 }
 
 .recipe-body {
@@ -22,6 +29,46 @@ form {
 
 @media (max-width: 767px) {
   .recipe-body {
-      grid-template-columns: 1fr; /* Single column for mobile devices */
+      grid-template-columns: 1fr;
   }
 }
+
+.spinner-border {
+  height: 10rem !important;
+  width: 10rem !important;
+  display: block !important;
+  border-width: 10px !important;
+  position: absolute;
+  left: calc(50% - 5rem);
+  top: calc(40% - 5rem);
+}
+
+.navbar-fixed-bottom {
+  height: 7%;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 1.5rem !important;
+  font-weight: 500;
+}
+
+.card-text {
+  margin: 2%;
+}
+
+.welcome, .error-message {
+  margin: 50% auto;
+  text-align: center;
+  font-size: large;
+}
+
+.welcome-title {
+  font-size: xx-large;
+}
+
+
+.navbar{
+  height: 7% ;
+}
+

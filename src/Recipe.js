@@ -9,13 +9,13 @@ function Recipe(props) {
     <div class="recipe">
       <h2>{props.name} Recipe</h2>
       <div className='recipe-body'>
-        <Card>
+        <Card className='m-2'>
           <CardHeader tag="h3">Ingredients</CardHeader>
           <CardText>
             <ul>{props.ingredients.map(ingredient => <li>{ingredient}</li>)}</ul>
           </CardText>
         </Card>
-        <Card>
+        <Card className='m-2'>
           <CardHeader tag="h3">Steps</CardHeader>
           <CardText>
             <ol>{props.steps.map(step => <li>{step}</li>)}</ol>
