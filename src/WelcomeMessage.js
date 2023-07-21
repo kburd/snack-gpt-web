@@ -1,5 +1,4 @@
 
-import { Card, CardHeader, CardText } from 'reactstrap';
 import './App.css';
 
 function WelcomeMessage(props) {

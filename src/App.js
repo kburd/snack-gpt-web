@@ -52,7 +52,7 @@ function App() {
       <div className="app-content">
         {isLoading ? <Spinner color="primary"/> : null}
         {(recipe !== null) ? <Recipe {...recipe}/> : null}
-        {(recipe == null && !isLoading && isError == false) ? <WelcomeMessage/> : null}
+        {(recipe === null && !isLoading && !isError) ? <WelcomeMessage/> : null}
         {isError ? <ErrorMessage/> : null}
       </div>
       <div className="navbar navbar-fixed-bottom">
