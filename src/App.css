@@ -19,3 +19,9 @@ form {
   grid-gap: 10px;
   margin-top: 5%;
 }
+
+@media (max-width: 767px) {
+  .recipe-body {
+      grid-template-columns: 1fr; /* Single column for mobile devices */
+  }
+}
