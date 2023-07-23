@@ -3,7 +3,7 @@
 }
 
 .app-content {
-  height: 85%;
+  height: calc(100% - 64px - 54px);
   padding: 5%;
   overflow-y: scroll;
   background-color: whitesmoke;
@@ -43,10 +43,6 @@ form {
   top: calc(40% - 5rem);
 }
 
-.navbar-fixed-bottom {
-  height: 7%;
-}
-
 .navbar-brand {
   color: white !important;
   font-size: 1.5rem !important;
@@ -67,8 +63,13 @@ form {
   font-size: xx-large;
 }
 
-
-.navbar{
-  height: 7% ;
+.new-recipe-message {
+  margin: auto;
+  margin-top: 100%;
+  text-align: center;
+  font-size: large;
 }
 
+.navbar-fixed-bottom {
+  margin: 0 5%;
+}

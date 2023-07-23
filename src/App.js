@@ -4,6 +4,7 @@ import './App.css';
 import Recipe from './Recipe';
 import WelcomeMessage from './WelcomeMessage';
 import ErrorMessage from './ErrorMessage';
+import NewRecipeMessage from './NewRecipeMessage';
 
 function App() {
 
@@ -11,6 +12,8 @@ function App() {
   const [query, setQuery] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [showNewRecipeMessage, setShowNewRecipeMessage] = useState(false);
+
 
   function getRecipe(event) {
 
@@ -18,6 +21,11 @@ function App() {
     setIsLoading(true);
     setRecipe(null)
     setIsError(false)
+
+        // Set a timeout for the popup
+    let timeoutId = setTimeout(() => {
+      setShowNewRecipeMessage(true);
+    }, 2000);
 
     fetch('https://abjb1atgc2.execute-api.us-east-2.amazonaws.com/test', {
       method: "POST",
@@ -33,12 +41,16 @@ function App() {
       }
       setIsLoading(false)
       setQuery("")
+      setShowNewRecipeMessage(false)
     })
     .catch(() => {
       setIsError(true)
       setIsLoading(false)
       setQuery("")
+      setShowNewRecipeMessage(false)
     })
+
+    return () => clearTimeout(timeoutId);
 
   }
 
@@ -51,6 +63,7 @@ function App() {
       </Navbar>
       <div className="app-content">
         {isLoading ? <Spinner color="primary"/> : null}
+        {showNewRecipeMessage ? <NewRecipeMessage/> : null}
         {(recipe !== null) ? <Recipe {...recipe}/> : null}
         {(recipe === null && !isLoading && !isError) ? <WelcomeMessage/> : null}
         {isError ? <ErrorMessage/> : null}
