@@ -22,9 +22,9 @@ function App() {
     setRecipe(null)
     setIsError(false)
 
-        // Set a timeout for the popup
+    // Set a timeout for the popup
     let timeoutId = setTimeout(() => {
-      setShowNewRecipeMessage(true);
+        setShowNewRecipeMessage(true);
     }, 2000);
 
     fetch('https://abjb1atgc2.execute-api.us-east-2.amazonaws.com/test', {
@@ -33,6 +33,8 @@ function App() {
     })
     .then(data => data.json())
     .then(response => {
+      clearTimeout(timeoutId);
+      timeoutId = null;
       if(response.recipeFound){
         setRecipe(response.recipe)
       }
@@ -44,13 +46,12 @@ function App() {
       setShowNewRecipeMessage(false)
     })
     .catch(() => {
+      clearTimeout(timeoutId);
       setIsError(true)
       setIsLoading(false)
       setQuery("")
       setShowNewRecipeMessage(false)
     })
-
-    return () => clearTimeout(timeoutId);
 
   }
 
