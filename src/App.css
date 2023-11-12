@@ -7,6 +7,7 @@
   padding: 5%;
   overflow-y: scroll;
   background-color: whitesmoke;
+  display: flex;
 }
 
 h1, h2{
@@ -18,6 +19,10 @@ form {
   grid-template-columns: 4fr 1fr;
   grid-gap: 10px;
   margin: 0 auto;
+}
+
+.recipe {
+  width: -webkit-fill-available;
 }
 
 .recipe-body {
@@ -38,9 +43,7 @@ form {
   width: 10rem !important;
   display: block !important;
   border-width: 10px !important;
-  position: absolute;
-  left: calc(50% - 5rem);
-  top: calc(40% - 5rem);
+  margin: auto;
 }
 
 .navbar-brand {
@@ -54,20 +57,13 @@ form {
 }
 
 .welcome, .error-message {
-  margin: 50% auto;
+  margin: auto;
   text-align: center;
   font-size: large;
 }
 
 .welcome-title {
   font-size: xx-large;
-}
-
-.new-recipe-message {
-  margin: auto;
-  margin-top: 100%;
-  text-align: center;
-  font-size: large;
 }
 
 .navbar-fixed-bottom {
